@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ChakraProvider, CSSReset } from "@chakra-ui/react"
+import { ChakraProvider, ColorModeScript, CSSReset } from "@chakra-ui/react"
 import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
@@ -11,6 +11,7 @@ ReactDOM.render(
     <ChakraProvider>
       <CSSReset />
         <Router>
+        <ColorModeScript initialColorMode={"dark"} />
           <App />
         </Router>
     </ChakraProvider>
