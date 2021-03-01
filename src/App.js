@@ -9,7 +9,7 @@ function App() {
       <Route path='/' exact={true} component={ LandingPage } />
       <Route path='/search' exact={true} component={ SearchPage } />
       <Route path='/dashboard/:bungieAcct' exact={true} component={ GuardianDashboardPage } />
-      <Route path='/register' exact={true} component={ RegisterPage } />
+      <Route path='/register/:discordId' exact={true} component={ RegisterPage } />
     </Switch>
   );
 }
