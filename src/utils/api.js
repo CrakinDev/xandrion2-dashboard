@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function getUserDetails()
 {
-    return axios.get(`${process.env.XANDRION_API}api/auth`,
+    return axios.get(`${process.env.REACT_APP_XANDRION_API}api/auth`,
     {
         withCredentials: true
     })
@@ -10,7 +10,7 @@ export function getUserDetails()
 
 export function getBungieUserDetails(username, platform, discordId, toastContext)
 {
-    return axios.post(`${process.env.XANDRION_API}api/register/${discordId}`, {
+    return axios.post(`${process.env.REACT_APP_XANDRION_API}api/register/${discordId}`, {
         NAME: username,
         PLATFORM: platform
     })
@@ -19,5 +19,5 @@ export function getBungieUserDetails(username, platform, discordId, toastContext
 export function getActivityData(bMembershipId, activityMode)
 {
     console.log(`Get activity data with acct ${bMembershipId} and activity ${activityMode}`)
-    return axios.get(`http://localhost:8080/api/stats/activities/${bMembershipId}/${activityMode}`)
+    return axios.get(`${process.env.REACT_APP_XANDRION_API}api/stats/activities/${bMembershipId}/${activityMode}`)
 }

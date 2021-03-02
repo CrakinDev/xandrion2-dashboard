@@ -3,6 +3,7 @@ import { getUserDetails } from '../../utils/api'
 import { Box, Center, Image, useToast } from '@chakra-ui/react'
 import RegisterBox from '../../components/RegisterBox'
 import { useParams } from 'react-router-dom'
+import CrakinDevFooter from '../../components/crakindevfooter'
 
 
 export function RegisterPage(props)
@@ -37,6 +38,7 @@ export function RegisterPage(props)
                     <RegisterBox discordId={`${discordId}`} toast={toast}/>
                 </Box>
             </Center>
+            <CrakinDevFooter />
         </div>
     )
 }

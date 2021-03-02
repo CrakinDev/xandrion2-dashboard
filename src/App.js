@@ -3,6 +3,8 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import { GuardianDashboardPage, LandingPage, RegisterPage, SearchPage } from './pages'
 
+require('dotenv').config()
+
 function App() {
   return (
     <Switch>

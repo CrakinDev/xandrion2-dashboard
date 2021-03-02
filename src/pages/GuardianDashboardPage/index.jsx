@@ -1,8 +1,9 @@
 import React from 'react'
 import { getUserDetails, getActivityData } from '../../utils/api'
-import { Tabs, TabList, Tab, TabPanels, TabPanel, Box } from '@chakra-ui/react'
+import { Tabs, TabList, Tab, TabPanels, TabPanel, Text, Box, Center } from '@chakra-ui/react'
 import ActivityPanel from '../../components/activitypanel'
 import { useParams } from 'react-router-dom'
+import CrakinDevFooter from '../../components/crakindevfooter'
 
 export function GuardianDashboardPage(props)
 {
@@ -15,29 +16,17 @@ export function GuardianDashboardPage(props)
     const bungieAcctId = props.match.params.bungieAcct
 
     // Ensures user has authenticated with Discord to protect route from unauthorized access
-    // React.useEffect( () => {
-    //     getUserDetails()
-    //         .then(({ data }) => {
-    //             console.log(data)
-    //             setUser(data)
-    //             setLoading(false)
-    //         })
-    //         .catch((err) => {
-    //             history.push('/')
-    //             setLoading(false)
-    //         })
-    // }, [])
-
-    // React.useEffect( () => {
-    //     getActivityData(bungieAcctId, currentActivity)
-    //         .then((res) => {
-    //             setActivityData(res.data)
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    //     }, [currentActivity]
-    // )
+    React.useEffect( () => {
+        getUserDetails()
+            .then(({ data }) => {
+                setUser(data)
+                setLoading(false)
+            })
+            .catch((err) => {
+                history.push('/')
+                setLoading(false)
+            })
+    }, [])
 
     function setTabIndex(index)
     {
@@ -49,7 +38,6 @@ export function GuardianDashboardPage(props)
                 break
 
             case 1:     // Nightfall
-                console.log("Switching activity to 46")
                 setcurrentActivity(46)
                 break
 
@@ -60,12 +48,11 @@ export function GuardianDashboardPage(props)
     }
 
 
-    // return !loading && (
-    return(
+    return !loading && (
+    //return(
         <div>
-            <h1>Dashboard Page</h1>
-            <p>{bungieAcctId}</p>
-            <Box p={3} borderWidth={1} borderRadius={8} boxShadow="lg" mx='auto' my={3}>
+            <Text fontSize="5xl">Dashboard</Text>
+            <Box p={3} borderWidth={1} borderRadius={8} boxShadow="lg" mx={6} my={3}>
                 <Tabs isManual isLazy isFitted onChange={(index) => setTabIndex(index)}>
                     <TabList>
                         <Tab>Strikes</Tab>
@@ -78,29 +65,33 @@ export function GuardianDashboardPage(props)
 
                     <TabPanels>
                         <TabPanel>
-                            <p>Strikes</p>
+                            <Center><Text fontSize="4xl" my={3}>Strikes</Text></Center>
                             <ActivityPanel bungieAcct={bungieAcctId} activity='3' />
                         </TabPanel>
                         <TabPanel>
-                            <p>Nightfall</p>
+                        <Center><Text fontSize="4xl" my={3}>Nightfall</Text></Center>
                             <ActivityPanel bungieAcct={bungieAcctId} activity='46' />
                         </TabPanel>
                         <TabPanel>
-                            <p>Crucible</p>
-                            {/* <ActivityPanel activity='5' /> */}
+                            <Center><Text fontSize="4xl" my={3}>Crucible</Text></Center>
+                            <ActivityPanel bungieAcct={bungieAcctId} activity='5' />
                         </TabPanel>
                         <TabPanel>
-                            <p>Iron Banner</p>
+                            <Center><Text fontSize="4xl" my={3}>Iron Banner</Text></Center>
+                            <ActivityPanel bungieAcct={bungieAcctId} activity='19' />
                         </TabPanel>
                         <TabPanel>
-                            <p>Trials of Osiris</p>
+                            <Center><Text fontSize="4xl" my={3}>Trials of Osiris</Text></Center>
+                            <ActivityPanel bungieAcct={bungieAcctId} activity='84' />
                         </TabPanel>
                         <TabPanel>
-                            <p>Raids</p>
+                            <Center><Text fontSize="4xl" my={3}>Raids</Text></Center>
+                            <ActivityPanel bungieAcct={bungieAcctId} activity='4' />
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
             </Box>
+            <CrakinDevFooter />
         </div>
     )
 }
