@@ -20,7 +20,6 @@ class ActivityPanel extends React.Component {
         getActivityData(this.props.bungieAcct, this.props.activity)
         .then((res) => {
             console.log("Res Data Exists")
-            console.log(res)
             this.setState({ activityData: res.data })
         })
         .catch(err => {
@@ -85,12 +84,12 @@ class ActivityPanel extends React.Component {
             return (
                 <Fade in>
                     <Wrap spacing={3} justify="center">
-                        {charts}
+                        { charts }
                     </Wrap>
                     <Center>
                         <Text fontSize="2xl" my={3}>Activities List</Text>
                     </Center>
-                    {activitiesList}
+                    { activitiesList }
                 </Fade>
             )
         }

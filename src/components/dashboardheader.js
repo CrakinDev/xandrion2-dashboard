@@ -6,8 +6,7 @@ class DashboardHeader extends React.Component {
     render() {
         let embs = []
         this.props.emblems.forEach(emb => {
-            console.log("Embs")
-            embs.push(<Image w={'32px'} h={'32px'} src={`https://www.bungie.net${emb}`}></Image>)
+            embs.push(<Image key={embs.length} w={'32px'} h={'32px'} src={`https://www.bungie.net${emb}`}></Image>)
         });
         return (
             <div>
