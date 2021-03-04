@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button } from '@chakra-ui/react'
+import { Box, Button, Center, Image } from '@chakra-ui/react'
 import { getUserDetails } from '../../utils/api'
+import LoginBox from '../../components/LoginBox'
 import CrakinDevFooter from '../../components/crakindevfooter'
 
 export function LandingPage(props)
@@ -8,8 +9,6 @@ export function LandingPage(props)
     const { history } = props
     const [user, setUser] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
-
-    const login = () => window.location.href = `${process.env.REACT_APP_XANDRION_API}api/auth/discord`
 
     React.useEffect( () => {
         // Attempt to get user details from previous login
@@ -36,11 +35,12 @@ export function LandingPage(props)
 
     return !loading && (
         <div>
-            <h1>Xandrion</h1>
-            <Button
-                onClick={ login }
-                colorScheme="blue">Login
-            </Button>
+             <Center mt={6}>
+                <Box w='350px' p={3} borderWidth={1} borderRadius={8} boxShadow="lg" my={3}>
+                    <Image src={'/images/xan_hydra_sm.png'}w='200px' h='142px' mx='auto' my={1} />
+                    <LoginBox />
+                </Box>
+            </Center>
             <CrakinDevFooter />
         </div> 
     ) 

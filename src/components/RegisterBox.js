@@ -26,9 +26,9 @@ class RegisterBox extends Component {
     }
 
     register = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         this.setState({loading: true})
-        let { name, platform } = this.state;
+        let { name, platform } = this.state
 
         console.log(JSON.stringify({
             NAME: name,

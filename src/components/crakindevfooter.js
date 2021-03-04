@@ -10,7 +10,7 @@ class CrakinDevFooter extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="footer">
                 <Box w='100%' bg='gray.900'>
                     <Center>
                         <VStack spacing={1} p={3}>

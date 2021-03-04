@@ -21,3 +21,9 @@ export function getActivityData(bMembershipId, activityMode)
     console.log(`Get activity data with acct ${bMembershipId} and activity ${activityMode}`)
     return axios.get(`${process.env.REACT_APP_XANDRION_API}api/stats/activities/${bMembershipId}/${activityMode}`)
 }
+
+export function getBungieCharacterDetails(bMembershipId, platform)
+{
+    console.log(`Get Character data with acct ${bMembershipId} and activity ${platform}`)
+    return axios.get(`${process.env.REACT_APP_XANDRION_API}api/stats/character/${bMembershipId}/${platform}`)
+}
