@@ -15,7 +15,7 @@ class LoginBox extends Component {
     login = (e) => {
         console.log("Login Function")
         e.preventDefault()
-        window.location.href = `${process.env.REACT_APP_XANDRION_API_HOST}:${process.env.REACT_APP_XANDRION_API_PORT}/api/auth/discord`
+        window.location.href = `${process.env.REACT_APP_XANDRION_API_HOST}}/api/auth/discord`
     }
 
     render() {
