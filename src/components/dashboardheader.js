@@ -1,13 +1,7 @@
 import React from 'react'
-import { RiRefreshFill } from "react-icons/ri";
-import { Box, Center, HStack, IconButton, Image, Text, VStack, Wrap, WrapItem } from '@chakra-ui/react'
-import { CrakinIcon, GithubIcon, TwitterIcon } from './icons/icons'
+import { Box, HStack, Image, Text } from '@chakra-ui/react'
 
 class DashboardHeader extends React.Component {
-    constructor(props)
-    {
-        super(props)
-    }
 
     render() {
         let embs = []

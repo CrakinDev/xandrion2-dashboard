@@ -1,7 +1,7 @@
 import React from 'react'
 import { getActivityData } from '../utils/api'
 import ActivityPart from './panelparts/activitypart'
-import { Box, Center, Fade, Spinner, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import { Center, Fade, Spinner, Text, Wrap, WrapItem } from '@chakra-ui/react'
 import ActivityChart from './panelparts/activitychart'
 
 class ActivityPanel extends React.Component {
@@ -29,7 +29,6 @@ class ActivityPanel extends React.Component {
     }
 
     render() {
-        //console.log(this.state.activityData)
         if(this.state.activityData == null)
         {
             return (
@@ -43,7 +42,7 @@ class ActivityPanel extends React.Component {
                 </div>
             )
         }
-        else if(this.state.activityData.length == 0)
+        else if(this.state.activityData.length === 0)
         {
             return (
                 <div>
@@ -61,25 +60,24 @@ class ActivityPanel extends React.Component {
             {
                 activitiesList.push(<Center><ActivityPart key={index} data={value} /></Center>)
             }
-            console.log(`Activity Panel Acitivity: ${this.props.activity}`)
+
             switch(parseInt(this.props.activity))
             {
                 
                 case 3:
                 case 4:
-                    console.log(`Case 3, 4`)
                     charts = [
-                        <WrapItem><ActivityChart style={ `height='200px'` } data={this.state.activityData} lineKeys={['kills', 'deaths', 'assists']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["Kills", "Deaths", "Assists"]}/></WrapItem>,
-                        <WrapItem><ActivityChart style={ `height='200px'` } data={this.state.activityData} lineKeys={['kdr', 'kdar', 'efficiency']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["K/D", "K/D/A", "Efficiency"]}/></WrapItem>,
-                        <WrapItem><ActivityChart style={ `height='200px'` } data={this.state.activityData} lineKeys={['activityDurationSeconds']} lineKeyColors={['#82ca9d']} lineKeyLabels={["Duration (s)"]}/></WrapItem>
+                        <WrapItem><ActivityChart key={0} style={ `height='200px'` } data={this.state.activityData} lineKeys={['kills', 'deaths', 'assists']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["Kills", "Deaths", "Assists"]}/></WrapItem>,
+                        <WrapItem><ActivityChart key={1} style={ `height='200px'` } data={this.state.activityData} lineKeys={['kdr', 'kdar', 'efficiency']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["K/D", "K/D/A", "Efficiency"]}/></WrapItem>,
+                        <WrapItem><ActivityChart key={2} style={ `height='200px'` } data={this.state.activityData} lineKeys={['activityDurationSeconds']} lineKeyColors={['#82ca9d']} lineKeyLabels={["Duration (s)"]}/></WrapItem>
                     ]
                     break
 
                 default:
                     charts = [
-                        <WrapItem><ActivityChart style={ `height='200px'` } data={this.state.activityData} lineKeys={['kills', 'deaths', 'assists']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["Kills", "Deaths", "Assists"]}/></WrapItem>,
-                        <WrapItem><ActivityChart style={ `height='200px'` } data={this.state.activityData} lineKeys={['kdr', 'kdar', 'efficiency']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["K/D", "K/D/A", "Efficiency"]}/></WrapItem>,
-                        <WrapItem><ActivityChart style={ `height='200px'` } data={this.state.activityData} lineKeys={['score']} lineKeyColors={['#82ca9d']} lineKeyLabels={["Score"]}/></WrapItem>
+                        <WrapItem><ActivityChart key={0} style={ `height='200px'` } data={this.state.activityData} lineKeys={['kills', 'deaths', 'assists']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["Kills", "Deaths", "Assists"]}/></WrapItem>,
+                        <WrapItem><ActivityChart key={1} style={ `height='200px'` } data={this.state.activityData} lineKeys={['kdr', 'kdar', 'efficiency']} lineKeyColors={['#82ca9d', '#EE0000', '#8884d8']} lineKeyLabels={["K/D", "K/D/A", "Efficiency"]}/></WrapItem>,
+                        <WrapItem><ActivityChart key={2} style={ `height='200px'` } data={this.state.activityData} lineKeys={['score']} lineKeyColors={['#82ca9d']} lineKeyLabels={["Score"]}/></WrapItem>
                     ]
                     break
             }

@@ -1,4 +1,4 @@
-import { Button, Icon, Stack, Text, Heading } from '@chakra-ui/react'
+import { Button, Stack, Text, Heading } from '@chakra-ui/react'
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 

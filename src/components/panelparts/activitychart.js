@@ -1,4 +1,3 @@
-import { Box, Divider } from '@chakra-ui/react'
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, Legend, Tooltip, CartesianGrid,  } from 'recharts'
 
@@ -21,7 +20,7 @@ class ActivityChart extends React.Component {
         const lineList = []
         for (const [index, value] of this.props.lineKeys.entries())
         {
-            lineList.push(<Line type="monotone" dataKey={value} stroke={this.props.lineKeyColors[index]} name={this.props.lineKeyLabels[index]} />)
+            lineList.push(<Line type="monotone" key={index} dataKey={value} stroke={this.props.lineKeyColors[index]} name={this.props.lineKeyLabels[index]} />)
         }
 
         return (

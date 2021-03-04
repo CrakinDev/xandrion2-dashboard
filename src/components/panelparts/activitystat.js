@@ -1,4 +1,3 @@
-import { Box, Divider } from '@chakra-ui/react'
 import React from 'react'
 
 class ActivityStat extends React.Component {

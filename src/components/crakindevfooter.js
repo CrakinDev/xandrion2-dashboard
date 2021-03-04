@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Center, HStack, IconButton, Text, VStack, Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Center, HStack, IconButton, Text, VStack } from '@chakra-ui/react'
 import { CrakinIcon, GithubIcon, TwitterIcon } from './icons/icons'
 
 class CrakinDevFooter extends React.Component {

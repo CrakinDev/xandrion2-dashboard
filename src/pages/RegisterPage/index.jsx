@@ -20,7 +20,6 @@ export function RegisterPage(props)
     React.useEffect( () => {
         getUserDetails()
             .then(({ data }) => {
-                console.log(data)
                 setUser(data)
                 setLoading(false)
             })
