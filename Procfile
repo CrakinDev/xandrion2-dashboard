@@ -1,1 +1,1 @@
-worker: node --trace-warnings xandrion2-dashboard/src/index.js
+worker: node --trace-warnings src/index.js
