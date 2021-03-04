@@ -4,8 +4,6 @@ import { getUserDetails } from '../../utils/api'
 import LoginBox from '../../components/LoginBox'
 import CrakinDevFooter from '../../components/crakindevfooter'
 
-const { colorMode, toggleColorMode } = useColorMode()
-
 export function LandingPage(props)
 {
     const { history } = props
@@ -13,8 +11,6 @@ export function LandingPage(props)
     const [loading, setLoading] = React.useState(true)
 
     React.useEffect( () => {
-        if(colorMode !== "dark") toggleColorMode
-
         // Attempt to get user details from previous login
         getUserDetails()
             .then(({ data }) => {
@@ -36,6 +32,9 @@ export function LandingPage(props)
                 setLoading(false)
             })
     }, [])
+
+    const { colorMode, toggleColorMode } = useColorMode()
+    if(colorMode !== "dark") toggleColorMode()
 
     return !loading && (
         <div>
