@@ -7,7 +7,6 @@ import CrakinDevFooter from '../../components/crakindevfooter'
 export function LandingPage(props)
 {
     const { history } = props
-    const [user, setUser] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
 
     React.useEffect( () => {
@@ -17,7 +16,6 @@ export function LandingPage(props)
                 // If details exist and cookie is valid, push user straight to dashboard
                 if(data[0].discordId && data[0].bungieAcct != null)
                 {
-                    setUser(data)
                     setLoading(false)
                     history.push(`/dashboard/${data[0].bungieAcct}`)
                 }

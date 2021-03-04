@@ -7,7 +7,6 @@ import CrakinDevFooter from '../../components/crakindevfooter'
 
 export function GuardianDashboardPage(props)
 {
-    const [user, setUser] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
     //const [activityData, setActivityData] = React.useState({})
     const [currentActivity, setcurrentActivity] = React.useState(3)
@@ -20,8 +19,6 @@ export function GuardianDashboardPage(props)
     React.useEffect( () => {
         getUserDetails()
             .then(({ data }) => {
-                setUser(data)
-                console.log(data[0].bungiePlatform)
                 getBungieCharacterDetails( data[0].bungieAcct, data[0].bungiePlatform )
                     .then(async (charData) => {
                         Object.keys(charData.data.Response.characters.data).forEach(charId => {

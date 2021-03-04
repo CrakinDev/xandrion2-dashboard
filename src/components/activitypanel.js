@@ -19,7 +19,6 @@ class ActivityPanel extends React.Component {
     {
         getActivityData(this.props.bungieAcct, this.props.activity)
         .then((res) => {
-            console.log("Res Data Exists")
             this.setState({ activityData: res.data })
         })
         .catch(err => {

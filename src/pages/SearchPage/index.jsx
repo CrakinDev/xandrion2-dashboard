@@ -3,7 +3,6 @@ import { getUserDetails } from '../../utils/api'
 
 export function SearchPage(props)
 {
-    const [user, setUser] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
 
     const { history } = props
@@ -13,7 +12,6 @@ export function SearchPage(props)
         getUserDetails()
             .then(({ data }) => {
                 console.log(data)
-                setUser(data)
                 setLoading(false)
             })
             .catch((err) => {

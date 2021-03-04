@@ -8,7 +8,6 @@ import CrakinDevFooter from '../../components/crakindevfooter'
 
 export function RegisterPage(props)
 {
-    const [user, setUser] = React.useState(null)
     const [loading, setLoading] = React.useState(true)
 
     const { history } = props
@@ -20,7 +19,6 @@ export function RegisterPage(props)
     React.useEffect( () => {
         getUserDetails()
             .then(({ data }) => {
-                setUser(data)
                 setLoading(false)
             })
             .catch((err) => {
