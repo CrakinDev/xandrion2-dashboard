@@ -7,17 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#login-bg
-{
-  
-}
-
-#login-hydra
-{
-  width: 600px;
-  height: 425px;
-}
-
 code
 {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -74,7 +74,7 @@ export function GuardianDashboardPage(props)
 
     return !loading && (
     //return(
-        <div>
+        <div style={{'margin-bottom': '130px'}}>
             <DashboardHeader emblems={characterEmblems} light={characterLight} />
             <Box p={3} borderWidth={1} borderRadius={8} boxShadow="lg" mx={6} my={3}>
                 <Tabs isManual isLazy isFitted onChange={(index) => setTabIndex(index)}>
